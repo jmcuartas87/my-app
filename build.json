@@ -1,0 +1,22 @@
+{
+    "ios": {
+        "debug": {
+            "developmentTeam": "YQ8RQ94657",
+            "packageType": "development",
+            "codeSignIdentity": "iPhone Developer",
+            "buildFlag": [
+                "-UseModernBuildSystem=0",
+                "-xcconfig=0"
+            ]
+        },
+        "release": {
+            "codeSignIdentity": "iPhone Developer",
+            "developmentTeam": "YQ8RQ94657",
+            "packageType": "app-store",
+            "buildFlag": [
+                "-UseModernBuildSystem=0",
+                "-xcconfig=0"
+            ]
+        }
+    }
+}

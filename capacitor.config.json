@@ -1,5 +1,5 @@
 {
-	"appId": "io.ionic.starter",
+	"appId": "com.jm.myApp",
 	"appName": "MyApp",
 	"webDir": "www",
 	"bundledWebRuntime": false
