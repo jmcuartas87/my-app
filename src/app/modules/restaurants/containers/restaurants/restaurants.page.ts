@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { RestaurantService } from 'src/app/shared/services/restaurant-services';
 
 @Component({
   selector: 'app-restaurants',
@@ -8,20 +9,16 @@ import { Component, OnInit } from '@angular/core';
 export class RestaurantsPage implements OnInit {
   public listRestaurants: any;
   
-  constructor() { }
+  constructor(
+    private restaurantService: RestaurantService
+  ) { }
 
   ngOnInit() {
-    this.listRestaurants = [{
-      name: 'Bouet',
-      visited: true 
-    }, {
-      name: 'Begin',
-      visited: false
-    }];
+    this.listRestaurants = this.restaurantService.getList();
   }
 
   public deleteRestaurant($event: any): void {
-    this.listRestaurants.splice($event, 1);
+    this.restaurantService.deleteItem($event);
   }
 
 }
