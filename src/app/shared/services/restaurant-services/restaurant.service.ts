@@ -1,13 +1,20 @@
 import { Injectable } from '@angular/core';
+import { StorageService } from '../storage';
 
 @Injectable({
   providedIn: 'root'
 })
 export class RestaurantService {
   private list: any;
-  constructor() { }
 
-  public getList() {
+  constructor(private storageService: StorageService) { }
+
+  public async getList() {
+    this.list = await this.storageService.getItems('restList.txt');
+    return this.list;
+  }
+
+  public setList() {
     this.list = [{
       name: 'Bouet',
       visited: true
@@ -16,10 +23,11 @@ export class RestaurantService {
       visited: false
     }];
 
-    return this.list;
+    this.storageService.setItems('restList.txt', JSON.stringify(this.list));
   }
 
   public deleteItem(index: number): void {
     this.list.splice(index, 1);
+    this.setList();
   }
 }

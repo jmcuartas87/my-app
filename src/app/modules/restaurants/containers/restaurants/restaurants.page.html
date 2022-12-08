@@ -12,4 +12,9 @@
     [listRestaurants]="listRestaurants"
     (deleteRestaurant)="deleteRestaurant($event)"
   ></restaurant-list>
+  <ion-fab slot="fixed" vertical="bottom" horizontal="end">
+    <ion-fab-button (click)="addRestaurant()">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
 </ion-content>

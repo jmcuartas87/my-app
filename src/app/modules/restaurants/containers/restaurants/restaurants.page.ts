@@ -13,8 +13,11 @@ export class RestaurantsPage implements OnInit {
     private restaurantService: RestaurantService
   ) { }
 
-  ngOnInit() {
-    this.listRestaurants = this.restaurantService.getList();
+  async ngOnInit() {
+    this.listRestaurants = await this.restaurantService.getList();
+  }
+
+  public addRestaurant(): void {
   }
 
   public deleteRestaurant($event: any): void {
